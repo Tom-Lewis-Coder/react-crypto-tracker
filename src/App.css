@@ -376,3 +376,10 @@ width: 70%;
     padding: 20px;
     align-items: center;
 }
+
+.show-less{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+}
