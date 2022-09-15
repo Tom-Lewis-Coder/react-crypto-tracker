@@ -12,8 +12,6 @@ const Homepage = () => {
   const { data, isFetching } = useGetCryptosQuery(10)
   const globalStats = data?.data?.stats
 
-  console.log(data)
-
   if (isFetching) return '...Loading'
 
   return (
@@ -27,7 +25,7 @@ const Homepage = () => {
         <Col span={12}><Statistic title='total Markets' value={millify(globalStats.totalMarkets)} /></Col>
       </Row>
       <div className='home-heading-container' >
-        <Title level={2} className='home-title'>Top 10 Cyrptocurrencies in the World</Title>
+        <Title level={2} className='home-title'>Top 10 Cyrptocurrencies</Title>
         <Title level={3} className='show-more'><Link to={'./cryptocurrencies'}>Show More</Link></Title>
       </div>
       <Cryptocurrencies simplified />
