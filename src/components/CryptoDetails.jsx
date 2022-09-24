@@ -13,14 +13,14 @@ const { Option } = Select
 
 const CryptoDetails = () => {
   const { coinId } = useParams()
-  const [ timeperiod, setTimeperiod ] = useState('7d')
+  const [ timeperiod, setTimeperiod ] = useState('24h')
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId)
   const { data: coinHistory } = useGetCryptoHistoryQuery({ coinId, timeperiod })
   const cryptoDetails = data?.data?.coin
 
   if (isFetching) return '...Loading'
 
-  const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y'];
+  const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y']
 
   const stats = [
     { title: 'Price to USD', value: `$ ${cryptoDetails?.price && millify(cryptoDetails?.price)}`, icon: <DollarCircleOutlined /> },
@@ -38,8 +38,6 @@ const CryptoDetails = () => {
     { title: 'Circulating Supply', value: `$ ${cryptoDetails?.supply?.circulating && millify(cryptoDetails?.supply?.circulating)}`, icon: <ExclamationCircleOutlined /> },
   ];
 
-  console.log(coinHistory)
-
   return (
     <Col className='coin-detail-container'>
       <Col className='coin-heading-container'>
@@ -51,19 +49,10 @@ const CryptoDetails = () => {
           View value statistics, market cap and supply.
         </p>
       </Col>
-      <Select 
-        defaultValue='7d'
-        className='select-timeperiod'
-        placeholder='select-time-period'
-        onChange={(value) => setTimeperiod(value)}
-      >
+      <Select defaultValue="24h" className="select-timeperiod" placeholder="Select Timeperiod" onChange={(value) => setTimeperiod(value)}>
         {time.map((date) => <Option key={date}>{date}</Option>)}
       </Select>
-      <LineChart 
-        coinHistory={coinHistory} 
-        currentPrice={millify(cryptoDetails.price)} 
-        coinName={cryptoDetails.name}
-      />
+      <LineChart coinHistory={coinHistory} currentPrice={millify(cryptoDetails?.price)} coinName={cryptoDetails?.name} />
       <Col className='stats-container'>
         <Col className='coin-value-statistics'>
           <Col className='coin-value-statistics-heading'>
