@@ -36,7 +36,7 @@ if (!cryptoNews?.value) return <Loader />
               filterOption={(input, option) => option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
             >
               <Option value="Cryptocurency">Cryptocurrency</Option>
-              {data?.data?.coins?.map((currency) => <Option value={currency.name}>{currency.name}</Option>)}
+              {data?.data?.coins?.map((currency, i) => <Option value={currency.name} key={i} >{currency.name}</Option>)}
            </Select>
           </Col>
         )}
@@ -46,7 +46,7 @@ if (!cryptoNews?.value) return <Loader />
               <a href={news.url} target='_blank' rel='noreferrer'>
                 <div className='news-image-container'> 
                 <Title className='news-title' level={4}>{news.name}</Title>
-                <img style={{ maxWidth: '200px', maxHeight: '100px'}}src={news?.image?.thumbnail?.contentUrl || demoImage} alt='news' />
+                <img style={{ maxWidth: '200px', maxHeight: '100px'}} src={news?.image?.thumbnail?.contentUrl || demoImage} alt='news' />
                 </div>
                 <p>
                   {news.description > 100 ? `${news.description.substring(0, 100)} ...` : news.description }

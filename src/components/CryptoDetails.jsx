@@ -106,9 +106,9 @@ const CryptoDetails = () => {
             <Title level={3} className='coin-details-heading'>
               {cryptoDetails.name} Links
             </Title>
-            {cryptoDetails.links.map((link) => (
+            {cryptoDetails.links?.map((link, ind) => (
               <Row className='coin-link' key={link.name}>
-                <Title level={5} className='link-name'>
+                <Title level={5} className='link-name' key={ind}>
                   {link.type}
                 </Title>
                 <a href={link.url} target='_blank' rel='noreferrer'>
