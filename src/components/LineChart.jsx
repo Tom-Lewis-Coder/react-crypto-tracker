@@ -1,5 +1,5 @@
 import React from 'react'
-import { Line, Element } from 'react-chartjs-2'
+import { Line } from 'react-chartjs-2'
 import Chart from 'chart.js/auto'
 import { Col, Row, Typography } from 'antd'
 

@@ -378,8 +378,5 @@ width: 70%;
 }
 
 .show-less{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    margin: 0 10px 10px 10px;
+    float: right;
 }

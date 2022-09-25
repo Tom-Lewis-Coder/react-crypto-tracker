@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import { useGetCryptoNewsQuery } from '../services/CryptoNewsApi'
 import { useGetCryptosQuery } from '../services/CryptoApi'
 
+import Loader from './Loader'
+
 const { Text, Title } = Typography
 const { Option } = Select
 const demoImage = 'https://www.bing.com/th?id=OVFT.mpzuVZnv8dwIMRfQGPbOPC&pid=News'
@@ -15,7 +17,7 @@ const News = ({ simplified }) => {
     const { data } = useGetCryptosQuery(100);
     const { data: cryptoNews } = useGetCryptoNewsQuery({ newsCategory, count: simplified ? 6 : 12 });
 
-if (!cryptoNews?.value) return '...Loading'
+if (!cryptoNews?.value) return <Loader />
 
   return (
     <>
