@@ -13,6 +13,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count)
   const [ cryptos, setCryptos ] = useState(cryptosList?.data?.coins)
   const [ searchTerm, setSearchTerm ] = useState('')
+  const [ ordered, setOrdered ] = useState(false)
 
   useEffect(() => { 
     const filteredData = cryptosList?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm))
@@ -20,6 +21,8 @@ const Cryptocurrencies = ({ simplified }) => {
   }, [cryptosList, searchTerm])
 
   if (isFetching) return <Loader />
+
+  let coinCards = cryptos && ordered ? [...cryptos].sort((a,b) => b.change - a.change) : cryptos
 
   return (
     <>
@@ -29,8 +32,9 @@ const Cryptocurrencies = ({ simplified }) => {
       <div className='search-crypto'>
         {!simplified && <Input placeholder='Search Cryptocurrency' onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}/>}
       </div>
-      <Row gutter={[32, 32]} className='crypto-card-container'>
-        {cryptos?.map((currency,ind) => (
+      <button className='sort-button' onClick={() => setOrdered(current => !current)} >{ordered === false ? '24hr Change' : 'Coin Ranking' }</button>
+      <Row gutter={[32, 32]} className='crypto-card-container'>  
+        {coinCards?.map((currency) => (
           <Col xs={24} sm={12} lg={6} className='crypto-card' key={currency.uuid}>
             <Link key={currency.uuid} to={`/crypto/${currency.uuid}`}>
               <Card
@@ -44,7 +48,8 @@ const Cryptocurrencies = ({ simplified }) => {
                 </Card>
             </Link>
           </Col>
-        ))}
+        ))
+        }
       </Row>
     </>
   )

@@ -296,7 +296,6 @@ a:hover{
 .news-image-container{
     display: flex !important;
     justify-content: space-evenly !important;
-    /* overflow: hidden; */
 }
 
 .news-title{
@@ -369,6 +368,15 @@ a:hover{
     margin: 20px auto 30px auto;
     width: 250px;
 }
+
+.sort-button{
+    background-color: #ffffff;
+    color: rgb(195, 195, 195);
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border);
+}
+
 .crypto-card-container{
     min-height: 65vh !important;
 }
