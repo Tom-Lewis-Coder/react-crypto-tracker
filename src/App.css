@@ -1,10 +1,10 @@
 :root{
     --text-primary:#000;
     --bgPrimary:#fff;
-   --bgSecondary: #F9F9F9;
-   --pink: #0071bd;
-   --light-blue: #e6f7ff;
-   --border: #d9d9d9;
+    --bgSecondary: #F9F9F9;
+    --med-blue: #0071bd;
+    --light-blue: #e6f7ff;
+    --border: #d9d9d9;
 }
 
 * {
@@ -14,7 +14,7 @@
 }
 
 a:hover{
-    color: var(--pink) !important;
+    color: var(--med-blue) !important;
 }
 
 .app{
@@ -92,7 +92,7 @@ a:hover{
     }
 }
 
-@media screen and (max-width:800px){
+@media screen and (max-width:880px){
     .app{
         flex-direction: column;
         overflow: hidden;
@@ -150,7 +150,7 @@ a:hover{
 
 .coin-heading-container .coin-name{
     font-weight: 900;
-    color: var(--pink);
+    color: var(--med-blue);
 }
 
 .coin-heading-container p{
@@ -170,13 +170,13 @@ a:hover{
     font-weight: 700;
     font-size: 1.4rem;
     margin-top: 20px;
-    color: var(--pink);
+    color: var(--med-blue);
 }
 
 .coin-details-heading{
     font-weight: 700 !important;
     margin-top: 20px !important;
-    color: var(--pink) !important;
+    color: var(--med-blue) !important;
 }
 
 .coin-stats{
@@ -213,7 +213,7 @@ a:hover{
 
 .coin-desc-link h2{
     font-weight: 700;
-    color: var(--pink);
+    color: var(--med-blue);
 }
 
 .coin-desc-link p{
@@ -222,7 +222,7 @@ a:hover{
 }
 
 .coin-desc-link a{
-    color: var(--pink);
+    color: var(--med-blue);
 }
 
 .coin-desc-link h3{
@@ -252,7 +252,7 @@ a:hover{
 }
 
 .coin-link a{
-    color: var(--pink);
+    color: var(--med-blue);
     font-weight: 700;
     font-size: 1rem;
 }
@@ -295,26 +295,40 @@ a:hover{
 }
 .news-image-container{
     display: flex !important;
-    justify-content: space-between !important;
-}
-.news-title{
-width: 70%;
+    justify-content: space-evenly !important;
+    /* overflow: hidden; */
 }
 
-.news-image-container .img{
-    width:100px;
-    height:100px;
+.news-title{
+    width: 70%;
+    margin-right: auto;
+    margin-left: auto;
 }
+
+.news-image-container img{
+    width: 75px;
+    height: 75px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: 5px;
+}
+
 .news-card p{
     color: black;
     margin: 10px 0px !important;
 }
 .provider-container{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 15px;
 }
 .provider-name{
     margin-left: 10px;
+}
+
+.provider-time-from {
+    margin-left: 43px
 }
 
 .chart-header{
