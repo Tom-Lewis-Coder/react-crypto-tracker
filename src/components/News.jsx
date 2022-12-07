@@ -1,5 +1,5 @@
 import React, { useState } from 'react' 
-import { Select, Typography, Row, Col, Avatar, Card } from 'antd'
+import { Select, Typography, Row, Col, Avatar, Card, Divider } from 'antd'
 import moment from 'moment'
 import { Link } from 'react-router-dom'
 
@@ -48,9 +48,11 @@ if (!cryptoNews?.value) return <Loader />
                 <Title className='news-title' level={4}>{news.name}</Title>
                 <img src={news?.image?.thumbnail?.contentUrl || demoImage} alt='news' />
                 </div>
+                <Divider />
                 <p>
                   {news.description > 100 ? `${news.description.substring(0, 100)} ...` : news.description }
                 </p>
+                <Divider />
                 <div className='provider-container'>
                   <div>
                     <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="" />

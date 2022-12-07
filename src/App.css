@@ -370,11 +370,8 @@ a:hover{
 }
 
 .sort-button{
-    background-color: #ffffff;
-    color: rgb(195, 195, 195);
-    padding: 3px;
-    margin-bottom: 10px;
-    border: 1px solid var(--border);
+    padding: 4px;
+    margin-bottom: 23px;
 }
 
 .crypto-card-container{
