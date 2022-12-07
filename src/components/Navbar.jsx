@@ -53,7 +53,7 @@ const Navbar = () => {
             </Button>
         </div>
         {activeMenu && (
-            <Menu theme='dark' items={menuItems} onClick={() => setActiveMenu(!activeMenu)}/>
+            <Menu theme='dark' items={menuItems} onClick={() => screenSize < 768 && setActiveMenu(!activeMenu)}/>
         )}
     </div>
   )

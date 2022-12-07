@@ -364,6 +364,12 @@ a:hover{
 .show-more{
     margin-top: 0px !important;
 }
+
+.show-less{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0px !important;
+}
 .exchange-image{
     margin: 0px 10px !important;
 }
@@ -397,8 +403,4 @@ a:hover{
     flex-direction: column;
     padding: 20px;
     align-items: center;
-}
-
-.show-less{
-    float: right;
 }
