@@ -53,7 +53,7 @@ const Navbar = () => {
             </Button>
         </div>
         {activeMenu && (
-            <Menu theme='dark' items={menuItems} />
+            <Menu theme='dark' items={menuItems} onClick={() => setActiveMenu(!activeMenu)}/>
         )}
     </div>
   )

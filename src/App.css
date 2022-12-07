@@ -131,6 +131,9 @@ a:hover{
     .show-more{
         font-size: 1.3rem !important;
     }
+    .show-less{
+        font-size: 1.5rem !important;
+    }
 }
 
 .coin-detail-container{
